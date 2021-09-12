@@ -1,9 +1,9 @@
 {
-    "name": "Veez Music Bot",
-    "logo": "https://i.postimg.cc/SQBqsJjN/logo8-11-232731.png",
-    "description": "Veez Music project allow you to stream music trought the telegram voice chat feature.",
+    "name": "Rio Music Bot",
+    "logo": "https://telegra.ph/file/bec3b0efa1b3967164eaa.jpg",
+    "description": "Rio Music project allow you to stream music trought the telegram voice chat feature.",
     "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/levina-lab/veezmusic",
+    "repository": "https://github.com/RioProjectX/Rio-Music",
     "stack": "container",
     "env": {
         "SESSION_NAME": {
@@ -57,7 +57,7 @@
         "THUMB_IMG": {
             "description": "fill with costum thumbnail image it's different with bg_image",
             "required": false,
-            "value": "https://telegra.ph/file/6809135960af808e931b9.png"
+            "value": "https://telegra.ph/file/bec3b0efa1b3967164eaa.jpg"
         },
         "OWNER_NAME": {
             "description": "fill with your username without @",
@@ -89,12 +89,12 @@
         "UPDATES_CHANNEL": {
             "description": "if you have channel fill the channel username here without @",
             "required": false,
-            "value": "levinachannel"
+            "value": "riobotsupport"
         },
         "GROUP_SUPPORT": {
             "description": "if you have group fill the group username here without @",
             "required": false,
-            "value": "VeezSupportGroup"
+            "value": "siiniaja"
         }
     },
     "buildpacks": [
