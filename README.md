@@ -1,4 +1,4 @@
-<h2 align="centre">🎵 VEEZ MUSIC BOT</h2>
+<h2 align="centre">🎵 RIO MUSIC BOT</h2>
 
 ### Veez Music is a telegram bot project that's allow you to play music on telegram voice chat group.
 
