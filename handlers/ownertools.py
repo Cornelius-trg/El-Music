@@ -34,7 +34,7 @@ async def botstats(_, message: Message):
     disk_usage = psutil.disk_usage('/').percent
     total_users = await db.total_users_count()
     await message.reply_text(
-        text=f"**📊 stats Of @{BOT_USERNAME}** \n\n**🤖 bot version:** `v6.5` \n\n**🙎🏼 users:** \n » **users on pm:** `{total_users}` \n\n**💾 disk usage,** \n » **disk space:** `{total}` \n » **used:** `{used}({disk_usage}%)` \n » **free:** `{free}` \n\n**🎛 hardware usage,** \n » **CPU usage:** `{cpu_usage}%` \n » **RAM usage:** `{ram_usage}%`",
+        text=f"**📊 Stats @{BOT_USERNAME}** \n\n**🤖 Versi Bot:** `v6.5` \n\n**🙎🏼 Pengguna:** \n » **users on pm:** `{total_users}` \n\n**💾 disk usage,** \n » **disk space:** `{total}` \n » **used:** `{used}({disk_usage}%)` \n » **free:** `{free}` \n\n**🎛 hardware usage,** \n » **CPU usage:** `{cpu_usage}%` \n » **RAM usage:** `{ram_usage}%`",
         parse_mode="Markdown",
         quote=True
     )
@@ -59,16 +59,16 @@ async def ban(c: Client, m: Message):
         user_id = int(m.command[1])
         ban_duration = int(m.command[2])
         ban_reason = ' '.join(m.command[3:])
-        ban_log_text = f"`Banning user...` \n\nUser ID: `{user_id}` \nDuration: `{ban_duration}` \nReason: `{ban_reason}`"
+        ban_log_text = f"`Banning user...` \n\nUser ID: `{user_id}` \nDurasi: `{ban_duration}` \nKarena: `{ban_reason}`"
         try:
             await c.send_message(
                 user_id,
-                f"sorry, you're banned!** \n\nReason: `{ban_reason}` \nDuration: `{ban_duration}` day(s). \n\n**💬 message from owner: ask in @{GROUP_SUPPORT} if you think this was an mistake."
+                f"Maaf, Kamu dibanned!** \n\nKarena: `{ban_reason}` \nDuration: `{ban_duration}` day(s). \n\n**💬 Kirim pesan ke Owner : tanya di @{GROUP_SUPPORT} jika kamu tidak bersalah."
             )
-            ban_log_text += '\n\n✅ this notification was sent to that user'
+            ban_log_text += '\n\n✅ notifikasi ini sudah terkirim ke pengguna'
         except:
             traceback.print_exc()
-            ban_log_text += f"\n\n❌ **failed sent this notification to that user** \n\n`{traceback.format_exc()}`"
+            ban_log_text += f"\n\n❌ **gagal mengirim kan notifikasi ke pengguna** \n\n`{traceback.format_exc()}`"
         await db.ban_user(user_id, ban_duration, ban_reason)
         print(ban_log_text)
         await m.reply_text(
@@ -78,7 +78,7 @@ async def ban(c: Client, m: Message):
     except:
         traceback.print_exc()
         await m.reply_text(
-            f"❌ an error occoured !, traceback is given below\n\n`{traceback.format_exc()}`",
+            f"❌ sedang eror occoured !, traceback is given below\n\n`{traceback.format_exc()}`",
             quote=True
         )
 
@@ -98,12 +98,12 @@ async def unban(c: Client, m: Message):
         try:
             await c.send_message(
                 user_id,
-                f"🎊 congratulations, you was unbanned!"
+                f"🎊 Selamat, Kamu sudah tidak di ban , jangan bandel lagi ya!"
             )
-            unban_log_text += '\n\n✅ this notification was sent to that user'
+            unban_log_text += '\n\n✅ notifikasi ini dikirim ke pengguna'
         except:
             traceback.print_exc()
-            unban_log_text += f"\n\n❌ **failed sent this notification to that user**\n\n`{traceback.format_exc()}`"
+            unban_log_text += f"\n\n❌ **gagal mengirim notifikasi ke pengguna**\n\n`{traceback.format_exc()}`"
         await db.remove_ban(user_id)
         print(unban_log_text)
         await m.reply_text(
