@@ -47,7 +47,7 @@
         "ASSISTANT_NAME": {
             "description": "fill with the assistant username without @",
             "required": true,
-            "value": "veezasisstant"
+            "value": "rioasistant"
         },
         "BG_IMAGE": {
             "description": "fill with your costum background image link",
@@ -62,7 +62,7 @@
         "OWNER_NAME": {
             "description": "fill with your username without @",
             "required": false,
-            "value": "dlwrml"
+            "value": "riio00"
         },
         "API_ID": {
             "description": "your App ID from my.telegram.org/apps",
