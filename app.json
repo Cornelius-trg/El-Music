@@ -52,7 +52,7 @@
         "BG_IMAGE": {
             "description": "fill with your costum background image link",
             "required": false,
-            "value": "background poto bot"
+            "value": "https://telegra.ph/file/18d25616d9883400af112.png"
         },
         "THUMB_IMG": {
             "description": "fill with costum thumbnail image it's different with bg_image",
