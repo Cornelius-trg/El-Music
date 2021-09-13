@@ -58,28 +58,28 @@ async def controlset(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "⏸ pause", callback_data="cbpause"
+                        "⏸ Jeda", callback_data="cbpause"
                     ),
                     InlineKeyboardButton(
-                        "▶️ resume", callback_data="cbresume"
+                        "▶️ Lanjutkan", callback_data="cbresume"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⏩ skip", callback_data="cbskip"
+                        "⏩ Skip", callback_data="cbskip"
                     ),
                     InlineKeyboardButton(
-                        "⏹ end", callback_data="cbend"
+                        "⏹ Hentikan", callback_data="cbend"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⛔ anti cmd", callback_data="cbdelcmds"
+                        "⛔ Anti cmd", callback_data="cbdelcmds"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🛄 group tools", callback_data="cbgtools"
+                        "🛄 Group tools", callback_data="cbgtools"
                     )
                 ],
                 [
@@ -103,7 +103,7 @@ async def pause(_, message: Message):
         await message.reply_text("❗ Tidak Sedang Memutar!")
     else:
         callsmusic.pytgcalls.pause_stream(chat_id)
-        await message.reply_text("▶️ Music Di Jeda!")
+        await message.reply_text("▶️ Musik Di Jeda!")
 
 
 @Client.on_message(command("resume") & other_filters)
@@ -160,7 +160,7 @@ async def skip(_, message: Message):
         skip = qeue.pop(0)
     if not qeue:
         return
-    await message.reply_text(f"⫸ skipped : **{skip[0]}**\n⫸ now playing : **{qeue[0][0]}**")
+    await message.reply_text(f"⫸ Melanjutkan : **{skip[0]}**\n⫸ Sekarang Memutar : **{qeue[0][0]}**")
 
 
 @Client.on_message(command("auth") & other_filters)
@@ -168,7 +168,7 @@ async def skip(_, message: Message):
 async def authenticate(client, message):
     global admins
     if not message.reply_to_message:
-        await message.reply("❗ reply ke pesan untuk authorize pengguna!")
+        await message.reply("❗ Reply ke pesan untuk authorize pengguna!")
         return
     if message.reply_to_message.from_user.id not in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
@@ -207,16 +207,16 @@ async def delcmdc(_, message: Message):
     chat_id = message.chat.id
     if status == "on":
         if await delcmd_is_on(message.chat.id):
-            await message.reply_text("✅ already activated")
+            await message.reply_text("✅ sudah aktif")
             return
         else:
             await delcmd_on(chat_id)
             await message.reply_text(
-                "🟢 Activated successfully"
+                "✅ Berhasil mengaktifkan"
             )
     elif status == "off":
         await delcmd_off(chat_id)
-        await message.reply_text("🔴 Disabled successfully")
+        await message.reply_text("🔴  disable successfully")
     else:
         await message.reply_text(
             "read the /help message to know how to use this command"
@@ -258,7 +258,7 @@ async def cbresume(_, query: CallbackQuery):
 async def cbend(_, query: CallbackQuery):
     chat_id = get_chat_id(query.message.chat)
     if query.message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await query.edit_message_text("❗️ nothing is playing", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Sedang tidak memutar", reply_markup=BACK_BUTTON)
     else:
         try:
             queues.clear(query.message.chat.id)
@@ -274,7 +274,7 @@ async def cbskip(_, query: CallbackQuery):
     global que
     chat_id = get_chat_id(query.message.chat)
     if query.message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await query.edit_message_text("❗️ nothing is playing", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Sedang tidak memutar", reply_markup=BACK_BUTTON)
     else:
         queues.task_done(query.message.chat.id)
         
@@ -290,9 +290,9 @@ async def cbskip(_, query: CallbackQuery):
         skip = qeue.pop(0)
     if not qeue:
         return
-    await query.edit_message_text(f"⏭ skipped music\n\n» skipped : **{skip[0]}**\n» now playing : **{qeue[0][0]}**", reply_markup=BACK_BUTTON)
+    await query.edit_message_text(f"⏭ Melanjutkan musik\n\n» skipped : **{skip[0]}**\n» sekarang Memutar : **{qeue[0][0]}**", reply_markup=BACK_BUTTON)
 
-# (C) Veez Music Project
+# (C) Rio Music Project
 
 # ban & unban function
 
@@ -316,13 +316,13 @@ async def ban_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                "✅ successfully banned "
+                "✅ Berhasil banned "
                 f"{user_first_name}"
                 " from this group !"
             )
         else:
             await message.reply_text(
-                "✅ banned "
+                "✅ Banned "
                 f"<a href='tg://user?id={user_id}'>"
                 f"{user_first_name}"
                 "</a>"
@@ -366,17 +366,17 @@ async def temp_ban_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                "✅ temporarily banned "
+                "✅ Temporarily banned "
                 f"{user_first_name}"
-                f" ,banned for {message.command[1]}!"
+                f" ,banned untuk {message.command[1]}!"
             )
         else:
             await message.reply_text(
-                "✅ temporarily banned "
+                "✅ Temporarily banned "
                 f"<a href='tg://user?id={user_id}'>"
-                "from this group !"
+                "Dari grup ini !"
                 "</a>"
-                f" ,banned for {message.command[1]}!"
+                f" ,banned untuk {message.command[1]}!"
             )
 
 @Client.on_message(filters.command(["ub", "um"], COMMAND_PREFIXES))
@@ -399,17 +399,17 @@ async def un_ban_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                "✅ ok accepted, user "
-                f"{user_first_name} can"
-                " join to this group again!"
+                "✅ Ok Menerima, pengguna "
+                f"{user_first_name} bisa"
+                " bergabung ke grup lagi!"
             )
         else:
             await message.reply_text(
-                "✅ ok, now "
+                "✅ ok, sekarang "
                 f"<a href='tg://user?id={user_id}'>"
                 f"{user_first_name}"
-                "</a> is not"
-                " restricted again!"
+                "</a> tidak"
+                " restricted lagi!"
             )
 
 @Client.on_message(filters.command("m", COMMAND_PREFIXES))
@@ -433,17 +433,17 @@ async def mute_user(_, message):
     else:
         if str(user_id).lower().startswith("@"):
             await message.reply_text(
-                "✅ okay,🏻 "
+                "✅ oke,🏻 "
                 f"{user_first_name}"
-                " successfully muted !"
+                " berhasil dibisukan !"
             )
         else:
             await message.reply_text(
-                "🏻✅ okay, "
+                "🏻✅ oke, "
                 f"<a href='tg://user?id={user_id}'>"
                 "now is"
                 "</a>"
-                " muted !"
+                " dibisukan !"
             )
 
 
