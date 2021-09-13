@@ -1,4 +1,4 @@
-# Copyright (C) 2021 VeezMusicProject
+# ASADE
 
 import traceback
 import asyncio
@@ -44,7 +44,7 @@ async def update_admin(client, message):
     for u in new_ads:
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
-    await message.reply_text("✅ Bot **reloaded correctly !**\n✅ **Admin list** has been **updated !**")
+    await message.reply_text("✅ Bot **Dimulai Ulang !**\n✅ **Admin list** sudah di **perbarui !**")
 
 
 # Control Menu Of Player
@@ -100,10 +100,10 @@ async def pause(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "paused"
     ):
-        await message.reply_text("❗ nothing in streaming!")
+        await message.reply_text("❗ Tidak Sedang Memutar!")
     else:
         callsmusic.pytgcalls.pause_stream(chat_id)
-        await message.reply_text("▶️ music paused!")
+        await message.reply_text("▶️ Music Di Jeda!")
 
 
 @Client.on_message(command("resume") & other_filters)
@@ -114,10 +114,10 @@ async def resume(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "playing"
     ):
-        await message.reply_text("❗ nothing is paused!")
+        await message.reply_text("❗ Tidak Sedang Memutar!")
     else:
         callsmusic.pytgcalls.resume_stream(chat_id)
-        await message.reply_text("⏸ music resumed!")
+        await message.reply_text("⏸ Melanjutkan Ke Lagu Berikutnya!")
 
 
 @Client.on_message(command("end") & other_filters)
@@ -126,7 +126,7 @@ async def resume(_, message: Message):
 async def stop(_, message: Message):
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ nothing in streaming!")
+        await message.reply_text("❗ Tidak Sedang Memutar!")
     else:
         try:
             queues.clear(chat_id)
@@ -134,7 +134,7 @@ async def stop(_, message: Message):
             pass
 
         callsmusic.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text("⏹ streaming ended!")
+        await message.reply_text("⏹ Streaming Dihentikan!")
 
 
 @Client.on_message(command("skip") & other_filters)
@@ -144,7 +144,7 @@ async def skip(_, message: Message):
     global que
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❗ nothing in streaming!")
+        await message.reply_text("❗ Tidak Sedang Memutar!")
     else:
         queues.task_done(chat_id)
 
@@ -168,7 +168,7 @@ async def skip(_, message: Message):
 async def authenticate(client, message):
     global admins
     if not message.reply_to_message:
-        await message.reply("❗ reply to message to authorize user!")
+        await message.reply("❗ reply ke pesan untuk authorize pengguna!")
         return
     if message.reply_to_message.from_user.id not in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
@@ -176,7 +176,7 @@ async def authenticate(client, message):
         admins[message.chat.id] = new_admins
         await message.reply("🟢 user authorized.\n\nfrom now on, that's user can use the admin commands.")
     else:
-        await message.reply("✅ user already authorized!")
+        await message.reply("✅ pengguna sudah authorized!")
 
 
 @Client.on_message(command("deauth") & other_filters)
@@ -184,15 +184,15 @@ async def authenticate(client, message):
 async def deautenticate(client, message):
     global admins
     if not message.reply_to_message:
-        await message.reply("❗ reply to message to deauthorize user!")
+        await message.reply("❗ balas ke pesan untuk deauthorize pengguna!")
         return
     if message.reply_to_message.from_user.id in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
         new_admins.remove(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
-        await message.reply("🔴 user deauthorized.\n\nfrom now that's user can't use the admin commands.")
+        await message.reply("🔴 pengguna deauthorized.\n\nfrom now that's user can't use the admin commands.")
     else:
-        await message.reply("✅ user already deauthorized!")
+        await message.reply("✅ pengguna sudah deauthorized!")
 
 
 # this is a anti cmd feature
@@ -200,7 +200,7 @@ async def deautenticate(client, message):
 @authorized_users_only
 async def delcmdc(_, message: Message):
     if len(message.command) != 2:
-        await message.reply_text("read the /help message to know how to use this command")
+        await message.reply_text("baca perintah /help untuk tau bagaimana menggunakan perintah ini")
         return
     status = message.text.split(None, 1)[1].strip()
     status = status.lower()
@@ -212,11 +212,11 @@ async def delcmdc(_, message: Message):
         else:
             await delcmd_on(chat_id)
             await message.reply_text(
-                "🟢 activated successfully"
+                "🟢 Activated successfully"
             )
     elif status == "off":
         await delcmd_off(chat_id)
-        await message.reply_text("🔴 disabled successfully")
+        await message.reply_text("🔴 Disabled successfully")
     else:
         await message.reply_text(
             "read the /help message to know how to use this command"
@@ -248,7 +248,7 @@ async def cbresume(_, query: CallbackQuery):
             ) or (
                 callsmusic.pytgcalls.active_calls[query.message.chat.id] == "resumed"
             ):
-        await query.edit_message_text("❗️ nothing is paused", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Tidak Sedang Memutar", reply_markup=BACK_BUTTON)
     else:
         callsmusic.pytgcalls.resume_stream(query.message.chat.id)
         await query.edit_message_text("⏸ music is resumed", reply_markup=BACK_BUTTON)
