@@ -40,7 +40,7 @@ Saya Memiliki Banyak Fitur Praktis Seperti :
 ┣• Mendownload Lagu.
 ┣• Melihat Lirik Lagu.
 ┣• Mempunyai Banyak Modul Menarik.
-┣• Mencari Lagu Yang ingin di Putar atau di Download.
+┣• Sekaligus Bisa Mengatur Groupmu.
 ┣• Gunakan Perintah » /help « untuk Mengetahui Fitur Lengkap Saya
 ┗━━━━━━━━━━━━━━
 ❃ Project By [Rio Cute](https://t.me/riio00)
@@ -159,7 +159,7 @@ async def help_(client: Client, message: Message):
 @Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
-    m_reply = await message.reply_text("pinging...")
+    m_reply = await message.reply_text("Mengecek ping...")
     delta_ping = time() - start
     await m_reply.edit_text(
         "🏓 `PONG!!`\n"
@@ -174,7 +174,7 @@ async def get_uptime(client: Client, message: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        "🤖 Statuse Bot:\n"
+        "🤖 Status Bot:\n"
         f"• **uptime:** `{uptime}`\n"
-        f"• **start time:** `{START_TIME_ISO}`"
+        f"• **waktu mulai:** `{START_TIME_ISO}`"
     )
