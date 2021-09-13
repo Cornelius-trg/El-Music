@@ -17,7 +17,7 @@ async def handle_user_status(bot, cmd):
         await db.add_user(chat_id)
         await bot.send_message(
             LOG_CHANNEL,
-            f"**📣 Notification** \n\n#NEW_USER **start use your bot!** \n\nFirst name: `{cmd.from_user.first_name}` \nUser id: `{cmd.from_user.id}` \nProfile link: [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id})"
+            f"**📣 Notifikasi** \n\n#NEW_USER **Mulai Menggunakan Bot Mu!** \n\nFirst name: `{cmd.from_user.first_name}` \nUser id: `{cmd.from_user.id}` \nProfile link: [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id})"
         )
 
     ban_status = await db.get_ban_status(chat_id)
@@ -27,7 +27,7 @@ async def handle_user_status(bot, cmd):
         ).days > ban_status["ban_duration"]:
             await db.remove_ban(chat_id)
         else:
-            await cmd.reply_text(f"sorry, you're banned, ask in @{GROUP_SUPPORT} if you think this was an mistake.", quote=True)
+            await cmd.reply_text(f"Maaf, Kamu di banned, tanya di @{GROUP_SUPPORT} jika kamu tidak bersalah.", quote=True)
             return
     await cmd.continue_propagation()
     
@@ -66,7 +66,7 @@ async def main_broadcast_handler(m, db):
         if not broadcast_ids.get(broadcast_id):
             break
     out = await m.reply_text(
-        text=f"**💡 broadcast started...**\n\n**when it's done, you'll be notified**"
+        text=f"**💡 Broadcast dimulai...**\n\n**when it's done, you'll be notified**"
     )
     start_time = time.time()
     total_users = await db.total_users_count()
@@ -111,13 +111,13 @@ async def main_broadcast_handler(m, db):
     await out.delete()
     if failed == 0:
         await m.reply_text(
-            text=f"✅ Broadcasting completed! \n**Completed in:** `{completed_in}` \n\n**Total users:** `{total_users}` \n**Total done:** `{done}` \n**Total success:** `{success}` \n**Total failed:** `{failed}`",
+            text=f"✅ Broadcasting berhasil! \n**Completed in:** `{completed_in}` \n\n**Total users:** `{total_users}` \n**Total done:** `{done}` \n**Total success:** `{success}` \n**Total failed:** `{failed}`",
             quote=True
         )
     else:
         await m.reply_document(
             document='broadcast-logs.txt',
-            caption=f"✅ Broadcasting completed! \n**Completed in:** `{completed_in}`\n\n**Total users:** `{total_users}` \n**Total done:** `{done}` \n**Total success:** `{success}` \n**Total failed:** `{failed}`",
+            caption=f"✅ Broadcasting berhasil! \n**Completed in:** `{completed_in}`\n\n**Total users:** `{total_users}` \n**Total done:** `{done}` \n**Total success:** `{success}` \n**Total failed:** `{failed}`",
             quote=True
         )
     os.remove('broadcast-logs.txt')
