@@ -32,7 +32,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    m = message.reply("🔎 finding song...")
+    m = message.reply("🔎 Mencari lagu...")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -49,16 +49,16 @@ def song(client, message):
         results[0]["views"]
 
     except Exception as e:
-        m.edit("❌ song not found.\n\nplease give a valid song name.")
+        m.edit("❌ Lagu tidak ditemukan.\n\nplease give a valid song name.")
         print(str(e))
         return
-    m.edit("📥 downloading...")
+    m.edit("📥 Mendownload...")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**🎧 Uploader @{bn}**"
+        rep = f"**🎧 Diupload @{bn}**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(dur_arr[i]) * secmul
@@ -73,7 +73,7 @@ def song(client, message):
         )
         m.delete()
     except Exception as e:
-        m.edit("❌ error, wait for dev to fix")
+        m.edit("❌ Eror, tunggu dev memperbaiki nya")
         print(e)
 
     try:
