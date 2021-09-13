@@ -1,6 +1,3 @@
-# Module by https://github.com/tofikdn
-# Copyright (C) 2021 TdMusic
-# Ported by @levina-lab for VeezMusic
 
 import requests
 from pyrogram import Client
