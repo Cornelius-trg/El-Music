@@ -24,7 +24,7 @@ async def wibu(client, message):
         results = f"{resp['url']}"
         return await client.send_video(message.chat.id, video=results)
     except Exception:
-        await message.reply_text("`Something went wrong LOL...`")
+        await message.reply_text("`Ops! Ada sesuatu yang salah...`")
 
 
 @Client.on_message(command(["chika", f"chika@{BOT_USERNAME}"]))
@@ -34,7 +34,7 @@ async def chika(client, message):
         results = f"{resp['url']}"
         return await client.send_video(message.chat.id, video=results)
     except Exception:
-        await message.reply_text("`Something went wrong LOL...`")
+        await message.reply_text("`Ops! Ada sesuatu yang salah...`")
 
 
 @Client.on_message(command(["truth", f"truth@{BOT_USERNAME}"]))
@@ -44,7 +44,7 @@ async def truth(client, message):
         results = f"{resp['message']}"
         return await message.reply_text(results)
     except Exception:
-        await message.reply_text("something went wrong...")
+        await message.reply_text("Ops! Ada sesuatu yang salah...")
 
 
 @Client.on_message(command(["dare", f"dare@{BOT_USERNAME}"]))
@@ -54,19 +54,19 @@ async def dare(client, message):
         results = f"{resp['message']}"
         return await message.reply_text(results)
     except Exception:
-        await message.reply_text("something went wrong...")
+        await message.reply_text("Ops! Ada sesuatu yang salah...")
 
 
 @Client.on_message(command(["lyric", f"lyric@{BOT_USERNAME}"]))
 async def lirik(_, message):
     try:
         if len(message.command) < 2:
-            await message.reply_text("**give a lyric name too !**")
+            await message.reply_text("**berikan judul lagu juga !**")
             return
         query = message.text.split(None, 1)[1]
-        rep = await message.reply_text("🔎 **searching lyrics...**")
+        rep = await message.reply_text("🔎 **Mencari Lirik...**")
         resp = requests.get(f"https://api-tede.herokuapp.com/api/lirik?l={query}").json()
         result = f"{resp['data']}"
         await rep.edit(result)
     except Exception:
-        await rep.edit("**Lyrics not found.** please give a valid song name !")
+        await rep.edit("**Lyrics tidak ditemukan.** tolong berikan judul yang benar !")
