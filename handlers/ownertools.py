@@ -59,7 +59,7 @@ async def ban(c: Client, m: Message):
         user_id = int(m.command[1])
         ban_duration = int(m.command[2])
         ban_reason = ' '.join(m.command[3:])
-        ban_log_text = f"`Banning user...` \n\nUser ID: `{user_id}` \nDurasi: `{ban_duration}` \nKarena: `{ban_reason}`"
+        ban_log_text = f"`Membanned pengguna...` \n\nUser ID: `{user_id}` \nDurasi: `{ban_duration}` \nKarena: `{ban_reason}`"
         try:
             await c.send_message(
                 user_id,
