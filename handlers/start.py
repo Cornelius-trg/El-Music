@@ -32,7 +32,7 @@ async def _human_time_duration(seconds):
 @Client.on_message(command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b> **Halo Cakep. \n
+        f"""<b> *Halo Cakep. \n
 Saya Bot Music Group, Yang Bisa Memutar Lagu Dengan Cepat di Voice Chat Group Dengan Cara Yang Mudah
 Saya Memiliki Banyak Fitur Praktis Seperti :
 ┏━━━━━━━━━━━━━━
@@ -45,7 +45,7 @@ Saya Memiliki Banyak Fitur Praktis Seperti :
 ┗━━━━━━━━━━━━━━
 ❃ Project By [Rio Cute](https://t.me/riio00)
 ❃ Terimakasih Telah Menggunakan Project Ini! [{OWNER_NAME}](https://t.me/{OWNER_NAME})
-━━━━━━━━━━━━━━━**
+━━━━━━━━━━━━━━━*
 </b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
@@ -60,7 +60,7 @@ Saya Memiliki Banyak Fitur Praktis Seperti :
                         "🐥 Pemilik Bot", url=f"https://t.me/{OWNER_NAME}")
                 ],[
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/siiniaja"
+                        "👥 Official Group", url=f"https://https://t.me/RioGroupSupport"
                     ),
                     InlineKeyboardButton(
                         "📣 Official Channel", url=f"https://t.me/riobotsupport")
