@@ -57,7 +57,9 @@ The easy way to host this bot, deploy to Heroku
 
 ### Special Credits ⚡
 - [RojSerBest](https://github.com/rojserbest) CallsMusic Developer
-
+- TD
+- Levina
+- Ken
 ### Dev 🎶
 - [RioProjectX](https://github.com/RioProjectX) Rio
 
