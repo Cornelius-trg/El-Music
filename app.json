@@ -1,9 +1,9 @@
 {
-    "name": "Rio Music Bot",
+    "name": "FAEL Music Bot",
     "logo": "https://telegra.ph/file/bec3b0efa1b3967164eaa.jpg",
     "description": "Rio Music project allow you to stream music trought the telegram voice chat feature.",
     "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/RioProjectX/Rio-Music",
+    "repository": "https://github.com/Cornelius-trg/El-Music",
     "stack": "container",
     "env": {
         "SESSION_NAME": {
