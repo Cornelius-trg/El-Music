@@ -43,7 +43,7 @@ Saya Memiliki Banyak Fitur Praktis Seperti :
 ┣• Sekaligus Bisa Mengatur Groupmu.
 ┣• Gunakan Perintah » /help « untuk Mengetahui Fitur Lengkap Saya
 ┗━━━━━━━━━━━━━━
-❃ Project By [Rio Cute](https://t.me/riio00)
+❃ Build By [Fael Wild](https://t.me/FuckTheRules3)
 ❃ Terimakasih Telah Menggunakan Project Ini! [{OWNER_NAME}](https://t.me/{OWNER_NAME})
 ━━━━━━━━━━━━━━━*
 </b>""",
@@ -54,19 +54,19 @@ Saya Memiliki Banyak Fitur Praktis Seperti :
                         "➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
-                         "🛠 Repo", url="http://github.com/RioProjectX/Rio-Music"
+                         "❃ Instagram", url="http://instagram.com/fael001_?utm_medium=copy_link"
                     ),
                     InlineKeyboardButton(
                         "🐥 Pemilik Bot", url=f"https://t.me/{OWNER_NAME}")
                 ],[
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://https://t.me/RioGroupSupport"
+                        "👥 Official Group", url=f"https://https://t.me/wildentourageni"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/riobotsupport")
+                        "📣 Owner's Channel", url=f"https://t.me/letsings")
                 ],[
                     InlineKeyboardButton(
-                        "🤴 Developer", url="https://t.me/riio00"
+                        "🤴 Developer", url="https://t.me/FuckTheRules3"
                     )
                 ]
             ]
