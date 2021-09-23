@@ -32,10 +32,10 @@ async def stream(_, message: Message):
                 [
                     InlineKeyboardButton(
                         text="✨ ɢʀᴏᴜᴘ",
-                        url=f"https://t.me/{GROUP_SUPPORT}"),
+                        url=f"https://t.me/wildentourageni"),
                     InlineKeyboardButton(
                         text="🌻 ᴄʜᴀɴɴᴇʟ",
-                        url=f"https://t.me/{UPDATES_CHANNEL}")
+                        url=f"https://t.me/syeindream")
                 ]
             ]
         )
