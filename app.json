@@ -8,31 +8,33 @@
     "env": {
         "SESSION_NAME": {
             "description": "fill with the pyrogram session string",
-            "required": true
+            "required": true,
+            "value": "BQB0tPXsNyVAE63NgMVGEkEry6RiC9jOfx5TnOo2XmhvCgs8iOMkMJQNA3sUHYXWM232pE6j74hb5bOO8C7sRzR_1wKbhKZUt-NBi4ypYd8fTLRA8rYB-Kayy0c360Z7rezXEDbkrJtqWjRXq_-vCOhiKVCZDo0i5UyZGMM9o6vPDpTO1xGuL2EGnyBltxHcEg4-ZxW96k2T6B09JV97zIVMJdVymS9LWPh_3sgXlbSCQnbGAnbohljs7M17m76md6n2HY3bUR9cuExaF9CWDjcRWmtuoi6rFIYi8a5mvRaINxR3d9zoHY440j4R90Ky4KqJYQFV8SQM3Ny4IpPxAzlJZvTv5wA"
         },
         "BOT_TOKEN": {
             "description": "your bot token from @BotFather",
-            "required": true
+            "required": true,
+            "value": "1869779593:AAG4ymW4zlgpqkFPlr4ESuZVIhI90y5VTA8"
         },
         "BOT_NAME": {
             "description": "your music bot name.",
             "required": true,
-            "value": ""
+            "value": "Entourage Musik 🎼"
         },
         "OWNER_ID": {
             "description": "fill with your telegram id as the owner of the bot",
             "required": true,
-            "value": ""
+            "value": "1177830308"
         },
         "DATABASE_URL": {
             "description": "fill with the mongodb url get from cloud.mongodb.com",
             "required": true,
-            "value": ""
+            "value": "mongodb+srv://fael001:paokkali@cluster0.wfnyr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
         },
         "LOG_CHANNEL": {
             "description": "create a private channel and get the channel id, add your bot as admin to the channel too",
             "required": true,
-            "value": ""
+            "value": "-1001182619040"
         },
         "BROADCAST_AS_COPY": {
             "description": "choose one between False and True, if you don't know what this is, ask to @VeezSupportGroup on telegram",
@@ -42,12 +44,12 @@
         "BOT_USERNAME": {
             "description": "fill with your bot username without @",
             "required": true,
-            "value": "riomusicbot"
+            "value": "EntourageMusik_bot"
         },
         "ASSISTANT_NAME": {
             "description": "fill with the assistant username without @",
             "required": true,
-            "value": "rioasistant"
+            "value": "EntourageMusik_bot"
         },
         "BG_IMAGE": {
             "description": "fill with your costum background image link",
@@ -62,24 +64,27 @@
         "OWNER_NAME": {
             "description": "fill with your username without @",
             "required": false,
-            "value": "riio00"
+            "value": "FuckTheRulesWild"
         },
         "API_ID": {
             "description": "your App ID from my.telegram.org/apps",
-            "required": true
+            "required": true,
+            "value": "5218924"
         },
         "API_HASH": {
             "description": "your Api hash from my.telegram.org/apps",
-            "required": true
+            "required": true,
+            "value": "60e501dde8e9cb629069af3dfb4eba9e"
         },
         "SUDO_USERS": {
             "description": "fill with the user id who can access all function in your bot (separate with space).",
-            "required": true
+            "required": true,
+            "value": "1727328231 1177830308"
         },
         "DURATION_LIMIT": {
             "description": "max duration for video to download (in minutes).",
             "required": true,
-            "value": "60"
+            "value": "150"
         },
         "PMPERMIT": {
             "description": "pm-permit for assistant.",
@@ -89,12 +94,12 @@
         "UPDATES_CHANNEL": {
             "description": "if you have channel fill the channel username here without @",
             "required": false,
-            "value": "riobotsupport"
+            "value": "syeindream"
         },
         "GROUP_SUPPORT": {
             "description": "if you have group fill the group username here without @",
             "required": false,
-            "value": "siiniaja"
+            "value": "wildentourageni"
         }
     },
     "buildpacks": [
