@@ -43,7 +43,7 @@ Saya Memiliki Banyak Fitur Praktis Seperti :
 ┣• Mencari Lagu Yang ingin di Putar atau di Download.
 ┣• Gunakan Perintah » /help « untuk Mengetahui Fitur Lengkap Saya
 ┗━━━━━━━━━━━━━━
-❃ Project By [Rio Cute](https://t.me/riio00)
+❃ Project By [Fael Wild](https://t.me/FuckTheRulesWild)
 ❃ Terimakasih Telah Menggunakan Project Ini! [{OWNER_NAME}](https://t.me/{OWNER_NAME})
 ━━━━━━━━━━━━━━━**
 </b>""",
@@ -54,19 +54,19 @@ Saya Memiliki Banyak Fitur Praktis Seperti :
                         "➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
-                         "🛠 Repo", url="http://github.com/RioProjectX/Rio-Musik"
+                         "❃ Instagram Owner ❃", url="https://instagram.com/fael001_?utm_medium=copy_link"
                     ),
                     InlineKeyboardButton(
                         "🐥 Pemilik Bot", url=f"https://t.me/{OWNER_NAME}")
                 ],[
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/riogroupsupport"
+                        "👥 Official Group", url=f"https://t.me/wildentourageni"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/riobotsupport")
+                        "📣 Official Channel", url=f"https://t.me/letsings")
                 ],[
                     InlineKeyboardButton(
-                        "🤴 Developer", url="https://t.me/riio00"
+                        "🤴 Developer", url="https://t.me/FuckTheRulesWild"
                     )
                 ]
             ]
@@ -104,7 +104,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="❔ Cara Menggunakan Saya ❔", url="https://t.me/riogroupsupport"
+                        text="❔ Channel ❔", url="https://t.me/letsings"
                     )
                 ]
             ]
@@ -157,15 +157,15 @@ async def help_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "GROUP", url=f"https://t.me/riogroupsupport"
+                        "GROUP", url=f"https://t.me/wildentourageni"
                     ),
                     InlineKeyboardButton(
-                        "CHANNEL", url=f"https://t.me/riobotsupport"
+                        "CHANNEL", url=f"https://t.me/letsings"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "DEVELOPER", url=f"https://t.me/riio00"
+                        "DEVELOPER", url=f"https://t.me/FuckTheRulesWild"
                     )
                 ]
             ]
