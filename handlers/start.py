@@ -43,16 +43,13 @@ async def start_(client: Client, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
-                ],[
-                    InlineKeyboardButton(
                         "❓ Basic Guide", callback_data="cbhowtouse")
                 ],[
                     InlineKeyboardButton(
                          "📚 Commands", callback_data="cbcmds"
                     ),
                     InlineKeyboardButton(
-                        "💝 Donate", url=f"https://t.me/{OWNER_NAME}")
+                        "💝 Owner", url=f"https://t.me/{OWNER_NAME}")
                 ],[
                     InlineKeyboardButton(
                         "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
@@ -61,7 +58,7 @@ async def start_(client: Client, message: Message):
                         "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
                     InlineKeyboardButton(
-                        "🌐 Source Code", url="https://github.com/levina-lab/VeezMusic"
+                        "🌐 instagram", url="https://instagram.com/fael001_?utm_medium=copy_link"
                     )
                 ]
             ]
